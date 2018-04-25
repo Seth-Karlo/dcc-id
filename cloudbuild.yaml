@@ -1,0 +1,8 @@
+steps:
+  - name: 'eu.gcr.io/$PROJECT_ID/hmf-icgc-image-builder:latest'
+    args: ['mvn', 'clean', 'package', '-Dmaven.test.skip=true']
+    id: mvn 
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-f', 'dcc-id-server/Dockerfile', '-t', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME-server:$COMMIT_SHA', 'dcc-id-server/']
+    waitFor: ['mvn']
+images: ['eu.gcr.io/$PROJECT_ID/$REPO_NAME-server']
