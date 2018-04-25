@@ -119,6 +119,8 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
   </dependencies>
 
   <properties>
+    <git-commit-id-plugin.version>2.2.0</git-commit-id-plugin.version>
+
     <!-- Versions - DCC -->
     <dcc-common.version>4.3.10</dcc-common.version>
 
